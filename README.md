@@ -1,8 +1,8 @@
 # VSCode CSS vars/env autocomplete
 
-[![Installs](https://vsmarketplacebadge.apphb.com/installs-short/lasalefamine.vscode-css.vars.svg)](https://marketplace.visualstudio.com/items?itemName=lasalefamine.vscode-css.vars)
-[![Version](https://vsmarketplacebadge.apphb.com/version/lasalefamine.vscode-css.vars.svg)](https://marketplace.visualstudio.com/items?itemName=lasalefamine.vscode-css.vars)
-[![Rating](https://vsmarketplacebadge.apphb.com/rating-star/lasalefamine.vscode-css.vars.svg)](https://marketplace.visualstudio.com/items?itemName=lasalefamine.vscode-css.vars)
+[![Installs](https://vsmarketplacebadge.apphb.com/installs-short/lasalefamine.vscode-css-vars.svg)](https://marketplace.visualstudio.com/items?itemName=lasalefamine.vscode-css-vars)
+[![Version](https://vsmarketplacebadge.apphb.com/version/lasalefamine.vscode-css-vars.svg)](https://marketplace.visualstudio.com/items?itemName=lasalefamine.vscode-css-vars)
+[![Rating](https://vsmarketplacebadge.apphb.com/rating-star/lasalefamine.vscode-css-vars.svg)](https://marketplace.visualstudio.com/items?itemName=lasalefamine.vscode-css-vars)
 
 <small>This is a fork of <a href="https://github.com/paradigm-sy/vscode-css-variables-autocomplete">vscode-css-variables-autocomplete</a></small>
 
