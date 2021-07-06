@@ -1,14 +1,14 @@
 {
   "name": "vscode-css-vars",
-  "version": "0.0.1",
-  "description": "VSCode extension for CSS var and env var autocomplete",
+  "version": "0.0.0",
+  "description": "VSCode extension for CSS var and env autocomplete",
   "keywords": [
     ""
   ],
   "license": "MIT",
   "repository": "lasalefamine/vscode-css-vars",
   "engines": {
-    "vscode": "^1.53.0",
+    "vscode": "^1.57.1",
     "node": ">=12"
   },
   "author": {
