@@ -1,6 +1,6 @@
 {
   "name": "vscode-css-vars",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "VSCode extension for CSS var and env autocomplete",
   "keywords": [
     ""
