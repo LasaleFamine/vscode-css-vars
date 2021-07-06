@@ -1,0 +1,119 @@
+{
+  "name": "vscode-css-vars",
+  "version": "0.0.0",
+  "description": "VSCode extension for CSS var and env var autocomplete",
+  "keywords": [
+    ""
+  ],
+  "license": "MIT",
+  "repository": "lasalefamine/vscode-css-vars",
+  "engines": {
+    "vscode": "^1.53.0",
+    "node": ">=12"
+  },
+  "author": {
+    "name": "Alessio Occhipinti (@lasalefamine)",
+    "email": "info@godev.space",
+    "url": "https://godev.space"
+  },
+  "publisher": "LasaleFamine",
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:css",
+    "onLanguage:scss",
+    "onLanguage:less",
+    "onLanguage:postcss"
+  ],
+  "contributes": {
+    "configuration": {
+      "title": "CSS Variables Autocomplete (var and env)",
+      "properties": {
+        "cssEnvVarsAutocomplete.varFiles": {
+          "type": "array",
+          "description": "Array of paths to files with css variables (var(--)"
+        },
+        "cssEnvVarsAutocomplete.envFiles": {
+          "type": "array",
+          "description": "Array of paths to files with css env variables (env(--)"
+        },
+        "cssEnvVarsAutocomplete.languageModes": {
+          "type": "array",
+          "description": "Custom language modes"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn build",
+    "dev": "ts-node src/index",
+    "build": "del-cli dist && tsc",
+    "lint": "eslint . --ext ts",
+    "test": "tsc --noEmit && jest --coverage",
+    "release": "git pull && standard-version && git push --follow-tags"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.ts": "eslint"
+  },
+  "dependencies": {
+    "css": "3.0.0",
+    "flat": "5.0.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "12.1.4",
+    "@commitlint/config-conventional": "12.1.4",
+    "@lasalefamine/eslint-config-base": "1.0.0",
+    "@lasalefamine/tsconfig": "0.1.0",
+    "@types/css": "0.0.31",
+    "@types/flat": "5.0.1",
+    "@types/jest": "26.0.23",
+    "@types/node": "16.0.0",
+    "@types/vscode": "1.57.1",
+    "@typescript-eslint/eslint-plugin": "4.28.2",
+    "@typescript-eslint/parser": "4.28.2",
+    "del-cli": "4.0.0",
+    "eslint": "7.30.0",
+    "eslint-plugin-import": "2.23.4",
+    "husky": "7.0.0",
+    "jest": "27.0.6",
+    "lint-staged": "11.0.0",
+    "rimraf": "3.0.2",
+    "standard-version": "9.3.0",
+    "ts-jest": "27.0.3",
+    "ts-node": "10.0.0",
+    "typescript": "4.3.5"
+  },
+  "files": [
+    "dist/src",
+    "!dist/__tests__",
+    "!*.test.*"
+  ],
+  "main": "dist/extension.js",
+  "types": "dist",
+  "nyc": {
+    "all": true,
+    "extension": [
+      ".ts"
+    ],
+    "include": [
+      "dist/src",
+      "src"
+    ],
+    "exclude": [
+      "**/*.d.ts",
+      "**/*.test.ts"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ]
+  }
+}

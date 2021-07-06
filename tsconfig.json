@@ -1,0 +1,10 @@
+{
+	"extends": "@lasalefamine/tsconfig",
+	"include": [
+		"src",
+		"test"
+	],
+	"compilerOptions": {
+		"outDir": "dist"
+	}
+}
