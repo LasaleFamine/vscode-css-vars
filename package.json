@@ -9,7 +9,7 @@
   "repository": "lasalefamine/vscode-css-vars",
   "engines": {
     "vscode": "^1.64.0",
-    "node": ">=14"
+    "node": ">=12"
   },
   "author": {
     "name": "Alessio Occhipinti (@lasalefamine)",
