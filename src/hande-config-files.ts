@@ -29,7 +29,13 @@ export const handleCssConfigFiles = (files: string[], folderPath: string) => {
       return [];
     }
 
-    for (const variable of variables) {
+    const sortedVariables = variables.sort((a, b) => {
+      const aName = a.property?.toLowerCase() ?? '';
+      const bName = b.property?.toLowerCase() ?? '';
+      return aName.localeCompare(bName);
+    });
+
+    for (const variable of sortedVariables) {
       // For use when the user has already typed `var(--`
       const completionItemBare = new CompletionItem(variable.property ?? '', vscode.CompletionItemKind.Variable);
       completionItemBare.detail = variable.value;
@@ -49,7 +55,13 @@ export const handleJsonConfigFiles = (files: string[], folderPath: string) => {
     const jsonParsed = JSON.parse(file);
     const variables = Object.keys(flat(jsonParsed, { delimiter: '-' }));
 
-    for (const variable of variables) {
+    const sortedVariables = variables.sort((a, b) => {
+      const aName = a?.toLowerCase() ?? '';
+      const bName = b?.toLowerCase() ?? '';
+      return aName.localeCompare(bName);
+    });
+
+    for (const variable of sortedVariables) {
       // For use when the user has already typed `env(--`
       const completionItemBare = new CompletionItem(variable, vscode.CompletionItemKind.Variable);
       completionItemBare.detail = variables[variable];

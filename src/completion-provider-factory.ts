@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import { CompletionItem, CompletionList } from 'vscode';
 
-export const completitionProviderFactory = (
+export const completionProviderFactory = (
   items: CompletionItem[],
   regex: RegExp,
 ) => (

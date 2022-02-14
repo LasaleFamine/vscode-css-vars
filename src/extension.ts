@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 import * as vscode from 'vscode';
-import { completitionProviderFactory } from './completition-provider-factory';
+import { completionProviderFactory } from './completion-provider-factory';
 import { handleCssConfigFiles, handleJsonConfigFiles } from './hande-config-files';
 
 const ExtensionConfig = {
@@ -44,18 +44,26 @@ export function activate(context: vscode.ExtensionContext) {
   const varCompletionProvider = vscode.languages.registerCompletionItemProvider(
     checkedLanguages,
     {
-      provideCompletionItems: completitionProviderFactory(varBareItems, /var\(--([\w-]*)/),
+      provideCompletionItems: completionProviderFactory(varBareItems, /var\(--([\w-]*)/),
     },
     'var(--',
   );
 
-  const envCompletitionProvider = vscode.languages.registerCompletionItemProvider(
+  const envCompletionProvider = vscode.languages.registerCompletionItemProvider(
     checkedLanguages,
     {
-      provideCompletionItems: completitionProviderFactory(envBareItems, /env\(--([\w-]*)/),
+      provideCompletionItems: completionProviderFactory(envBareItems, /env\(--([\w-]*)/),
     },
     'env(--',
   );
 
-  context.subscriptions.push(varCompletionProvider, envCompletitionProvider);
+  const tokenCompletionProvider = vscode.languages.registerCompletionItemProvider(
+    checkedLanguages,
+    {
+      provideCompletionItems: completionProviderFactory(envBareItems, /token\(--([\w-]*)/),
+    },
+    'token(--',
+  );
+
+  context.subscriptions.push(varCompletionProvider, envCompletionProvider, tokenCompletionProvider);
 }

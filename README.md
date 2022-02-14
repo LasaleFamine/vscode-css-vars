@@ -11,7 +11,7 @@
 
 ## How it works
 
-It currently works with both CSS `var` and [PostCSS `env` variables](https://github.com/csstools/postcss-env-function).
+It currently works with both CSS `var`, [PostCSS `env` variables](https://github.com/csstools/postcss-env-function) and custom `token` variables.
 
 
 ### Configuration
