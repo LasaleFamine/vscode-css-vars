@@ -8,8 +8,8 @@
   "license": "MIT",
   "repository": "lasalefamine/vscode-css-vars",
   "engines": {
-    "vscode": "^1.57.1",
-    "node": ">=12"
+    "vscode": "^1.64.0",
+    "node": ">=14"
   },
   "author": {
     "name": "Alessio Occhipinti (@lasalefamine)",
