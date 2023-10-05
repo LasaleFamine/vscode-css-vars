@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-syntax */
 import * as vscode from 'vscode';
 import { completionProviderFactory } from './completion-provider-factory';
-import { handleCssConfigFiles, handleJsonConfigFiles } from './hande-config-files';
+import { handleCssConfigFiles, handleJsonConfigFiles } from './handle-config-files';
 
 const ExtensionConfig = {
   mainKey: 'cssEnvVarsAutocomplete',
@@ -14,7 +14,7 @@ export function activate(context: vscode.ExtensionContext) {
   const varBareItems: vscode.CompletionItem[] = [];
   const envBareItems: vscode.CompletionItem[] = [];
   const workspaceFolder = vscode.workspace.workspaceFolders ?? [];
-  const folderPath = workspaceFolder[0]?.uri.fsPath;
+  const folderPath = workspaceFolder[0]?.uri.fsPath!;
 
   if (!vscode.workspace.workspaceFolders) {
     return;
