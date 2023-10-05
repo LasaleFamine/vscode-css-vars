@@ -64,7 +64,7 @@ export const handleJsonConfigFiles = (files: string[], folderPath: string) => {
     for (const variable of sortedVariables) {
       // For use when the user has already typed `env(--`
       const completionItemBare = new CompletionItem(variable, vscode.CompletionItemKind.Variable);
-      completionItemBare.detail = variables[variable];
+      completionItemBare.detail = variables[Number(variable)];
       completionItemBare.insertText = variable.replace(/^--/g, '');
       items.push(completionItemBare);
     }
